@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Экзамен ПМ.04 — Подсказки</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { padding: 2rem; background-color: #f8f9fa; }
+    h2 { margin-top: 2rem; }
+    pre { background: #e9ecef; padding: 1rem; border-radius: 0.5rem; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Экзамен ПМ.04 — Подсказки</h1>
+    <p class="text-center">Сайт для подготовки к квалификационному экзамену</p>
+
+    <h2>1. Установка и настройка ОС</h2>
+    <ul>
+      <li>Настрой параметры ОС: <code>sudo dpkg-reconfigure locales</code>, <code>timedatectl</code></li>
+      <li>Установи драйверы: <code>sudo ubuntu-drivers autoinstall</code></li>
+      <li>Настрой интернет: <code>nmcli dev wifi connect</code></li>
+      <li>Проверь соединение: <code>ping 8.8.8.8</code></li>
+      <li>Установи ПО: LibreOffice, GIMP, архиватор</li>
+      <li>Установи CUPS и виртуальный принтер: <code>sudo apt install cups</code></li>
+    </ul>
+
+    <h3>Чек-лист</h3>
+    <ul>
+      <li>[ ] Установлена ОС</li>
+      <li>[ ] Установлены драйверы</li>
+      <li>[ ] Интернет работает</li>
+      <li>[ ] Установлено базовое ПО</li>
+      <li>[ ] Виртуальный принтер работает</li>
+    </ul>
+
+    <h2>2. Защита компьютерных систем</h2>
+    <ul>
+      <li>Резервное копирование: <code>timeshift --create</code></li>
+      <li>Создание ISO: Clonezilla или Deja Dup</li>
+      <li>Добавить пользователей: <code>sudo adduser testuser</code></li>
+      <li>Права: <code>chmod</code>, <code>chown</code></li>
+      <li>Аутентификация: PAM, <code>passwd</code></li>
+      <li>Журнал: <code>journalctl -xe</code>, <code>logrotate</code></li>
+    </ul>
+
+    <h3>Чек-лист</h3>
+    <ul>
+      <li>[ ] Создана резервная копия</li>
+      <li>[ ] Создан ISO/образ</li>
+      <li>[ ] Созданы пользователи и группы</li>
+      <li>[ ] Права настроены</li>
+      <li>[ ] Логирование и аутентификация работают</li>
+    </ul>
+
+    <h2>3. Установка ПО</h2>
+    <ul>
+      <li>Android Studio: официальный сайт, .deb файл</li>
+      <li>Eclipse, Code::Blocks — для C/C++</li>
+      <li>БД: <code>sudo apt install mysql-server</code>, SQLite, phpMyAdmin</li>
+      <li>GIMP, LibreOffice — графика и офис</li>
+      <li>Архиваторы: <code>sudo apt install p7zip-full</code></li>
+      <li>Антивирус: ClamAV, <code>sudo apt install clamav</code></li>
+    </ul>
+
+    <h3>Чек-лист</h3>
+    <ul>
+      <li>[ ] Установлены все необходимые программы</li>
+      <li>[ ] Выполнена базовая настройка</li>
+      <li>[ ] ПО работает корректно с ОС</li>
+    </ul>
+
+    <h2>4. Документирование ПО</h2>
+    <p>Согласно ГОСТ Р 59795–2021, документация пользователя должна включать:</p>
+    <ul>
+      <li><strong>Наименование программного обеспечения</strong></li>
+      <li><strong>Назначение программы</strong> — краткое описание, зачем она нужна</li>
+      <li><strong>Способы запуска</strong> — как и где запустить программу</li>
+      <li><strong>Функциональные возможности</strong> — список задач, которые выполняет ПО</li>
+      <li><strong>Основные действия пользователя</strong> — что и как делать в интерфейсе</li>
+      <li><strong>Способы завершения работы</strong> — как правильно выйти</li>
+    </ul>
+    <p>Также следует оформить руководство по использованию: описать интерфейс, меню, кнопки и примеры сценариев работы.</p>
+
+    <p>Пример оформления:</p>
+    <pre>
+Наименование: GIMP (GNU Image Manipulation Program)
+Назначение: Редактор изображений для обработки и создания графики
+Запуск: Программы → Графика → GIMP
+Функции:
+- Открытие и редактирование изображений
+- Использование слоёв
+- Работа с цветами, фильтрами и масками
+- Экспорт в различные форматы (PNG, JPG, PSD)
+Интерфейс: Главное меню, панель инструментов, окно слоёв
+Завершение: Файл → Выход
+    </pre>
+
+    <h3>Чек-лист</h3>
+    <ul>
+      <li>[ ] Подготовлена документация пользователя (по ГОСТ)</li>
+      <li>[ ] Подготовлено руководство по функциям ПО</li>
+      <li>[ ] Указаны способы запуска и завершения</li>
+      <li>[ ] Перечислены функции и сценарии работы</li>
+    </ul>
+
+    <h2>5. Дополнительные файлы</h2>
+    <p>Скачайте файлы с примерами документации:</p>
+    <a href="files/kval.docx" target="_blank" class="btn btn-outline-primary mb-2">амир</a>
+    <br>
+    <a href="https://github.com/tretiakovalera/PM04/wiki">лера</a>
+
+    <footer class="text-center mt-5">
+      <hr>
+      <p>&copy; 2025 ПМ.04 Подготовка. Создано для обучения.</p>
+    </footer>
+  </div>
+</body>
+</html>
