@@ -112,40 +112,51 @@
     <a href="files/kval.docx" target="_blank" class="btn btn-outline-primary mb-2">амир</a>
     <br>
     <a href="https://github.com/tretiakovalera/PM04/wiki">лера</a>
+    
+      <h2>6. Критерии оценивания и действия</h2>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead class="table-light">
+          <tr>
+            <th>Критерий</th>
+            <th>Действие для выполнения</th>
+            <th>Баллы</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Настройка ядра</td><td>Открыть <code>/etc/sysctl.conf</code>, добавить параметры (например <code>vm.swappiness=10</code>), применить: <code>sudo sysctl -p</code></td><td>2.5</td></tr>
+          <tr><td>Настройка SSH</td><td>Установить <code>sudo apt install openssh-server</code>, включить <code>systemctl enable --now ssh</code>, проверить соединение <code>ssh localhost</code></td><td>2.0</td></tr>
+          <tr><td>Удалённый доступ</td><td>Разрешить через брандмауэр: <code>sudo ufw allow ssh</code>, убедиться, что служба работает</td><td>2.0</td></tr>
+          <tr><td>Сетевой интерфейс</td><td>Проверить интерфейсы: <code>ip a</code> или <code>nmcli dev status</code>, выбрать активный</td><td>1.0</td></tr>
+          <tr><td>Проверка соединения</td><td>Выполнить: <code>ping 8.8.8.8</code>, <code>curl ya.ru</code> (если нет GUI)</td><td>2.0</td></tr>
+          <tr><td>Установка базового ПО</td><td><code>sudo apt install libreoffice p7zip-full gimp</code></td><td>2.0</td></tr>
+          <tr><td>Установка виртуального принтера</td><td><code>sudo apt install cups</code>, перейти на <code>http://localhost:631</code>, добавить PDF-принтер</td><td>2.0</td></tr>
+          <tr><td>Обоснование выбора ПО</td><td>Описано в документации и разделе сайта</td><td>2.0</td></tr>
+          <tr><td>Резервное копирование</td><td>Установить Timeshift, создать снимок: <code>sudo timeshift --create</code></td><td>2.0</td></tr>
+          <tr><td>Создание образа</td><td>Использовать Clonezilla (загрузка Live ISO) или Deja Dup (GUI)</td><td>1.0</td></tr>
+          <tr><td>Точки восстановления</td><td>Через Timeshift → «Create» или через CLI</td><td>2.0</td></tr>
+          <tr><td>Создание пользователей/групп</td><td><code>adduser analyst</code>, <code>groupadd team</code>, <code>usermod -aG team analyst</code></td><td>1.0</td></tr>
+          <tr><td>Права доступа</td><td><code>sudo chown analyst:team /opt/docs</code>, <code>chmod 770 /opt/docs</code></td><td>1.0</td></tr>
+          <tr><td>Аутентификация</td><td>Настройка пароля через <code>passwd</code>, редактирование PAM: <code>/etc/pam.d/common-password</code></td><td>1.0</td></tr>
+          <tr><td>Журналы мониторинга</td><td><code>journalctl -xe</code> для просмотра, настройка логов в <code>/etc/logrotate.conf</code></td><td>1.0</td></tr>
+          <tr><td>Установка и настройка ПО</td><td>Установить Android Studio: <code>sudo snap install android-studio --classic</code>, настроить SDK, интерфейс</td><td>4.5</td></tr>
+          <tr><td>Обмен данными</td><td>Установить MySQL, phpMyAdmin, подключение из среды разработки</td><td>2.0</td></tr>
+          <tr><td>Совместимость ПО</td><td>Цветовая палитра (тема интерфейса), масштаб, отключение композитора (<code>compton</code>), масштаб 100%</td><td>2.5</td></tr>
+          <tr><td>Документация</td><td>Подготовить файл <code>doc_user.pdf</code> с описанием ПО</td><td>2.5</td></tr>
+          <tr><td>Руководство</td><td>Файл <code>manual_software.pdf</code> с интерфейсом, примерами, сценариями</td><td>4.0</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-     <h2>6. Критерии оценивания и действия</h2>
+    <h2>7. Руководство пользователя (по ГОСТ Р 59795–2021)</h2>
+    <p><strong>Разделы:</strong></p>
     <ul>
-      <li><strong>Настройка ядра (2.5):</strong> Открыть файл <code>/etc/sysctl.conf</code>, внести параметры, например <code>vm.swappiness=10</code>. Применить командой <code>sudo sysctl -p</code>.</li>
-      <li><strong>Настройка SSH (2.0):</strong> <code>sudo apt install openssh-server</code>, включить <code>sudo systemctl enable --now ssh</code>. Проверить <code>ssh localhost</code>.</li>
-      <li><strong>Удалённый доступ (2.0):</strong> Настроить SSH + разрешить через брандмауэр <code>sudo ufw allow ssh</code>.</li>
-      <li><strong>Выбор сетевого интерфейса (1.0):</strong> Использовать <code>ip a</code> или <code>nmcli device status</code> и подключить актуальный.</li>
-      <li><strong>Проверка соединения (2.0):</strong> Выполнить <code>ping 8.8.8.8</code> и <code>curl ya.ru</code>.</li>
-      <li><strong>Базовое ПО (2.0):</strong> Установить LibreOffice, архиватор: <code>sudo apt install libreoffice p7zip-full</code>.</li>
-      <li><strong>Виртуальный принтер (2.0):</strong> Установить CUPS: <code>sudo apt install cups</code>. Перейти в <code>http://localhost:631</code> и добавить PDF-принтер.</li>
-      <li><strong>Обоснование выбора ПО (2.0):</strong> Указать цели, назначение, совместимость — включено в документацию и сайт.</li>
-
-      <li><strong>Резервное копирование (2.0):</strong> Установить Timeshift, создать снимок: <code>sudo timeshift --create --comments "Initial backup"</code></li>
-      <li><strong>Образ системы (1.0):</strong> Использовать Deja Dup (GUI) или Clonezilla (Live ISO).</li>
-      <li><strong>Точки восстановления (2.0):</strong> Timeshift → "Create" (через GUI) или через терминал.</li>
-      <li><strong>Создание пользователей и групп (1.0):</strong> <code>sudo adduser analyst</code>, <code>sudo groupadd team</code>, <code>sudo usermod -aG team analyst</code></li>
-      <li><strong>Права доступа (1.0):</strong> Пример: <code>sudo chown analyst:team /opt/data</code>, <code>chmod 770 /opt/data</code></li>
-      <li><strong>Аутентификация (1.0):</strong> Установить требования к паролю: <code>/etc/pam.d/common-password</code>, изменить пароль <code>passwd user</code></li>
-      <li><strong>Журналы мониторинга (1.0):</strong> Просмотр логов: <code>journalctl -xe</code>. Настройка: <code>/etc/logrotate.conf</code></li>
-
-      <li><strong>Установка и настройка ПО (2.5 + 2.0):</strong> Установить Android Studio: <code>sudo snap install android-studio --classic</code>. Открыть, настроить интерфейс, цветовую схему, SDK.</li>
-      <li><strong>Обмен данными (2.0):</strong> Установить MySQL, phpMyAdmin. Проверить соединение с базой из IDE.</li>
-      <li><strong>Совместимость (5 × 0.5):</strong>
-        <ul>
-          <li>Цветовая палитра: Настройка темы в настройках системы</li>
-          <li>Низкое разрешение: переключить режим экрана, масштаб 100%</li>
-          <li>Меню и кнопки: настройка DPI через <code>gnome-tweaks</code></li>
-          <li>Отключить композицию: <code>compton --backend glx</code> или <code>xfwm4 --replace</code></li>
-          <li>Отключить масштабирование: Параметры экрана → масштаб 100%</li>
-        </ul>
-      </li>
-
-      <li><strong>Документация (2.5):</strong> Файл с описанием: название ПО, запуск, функции.</code></li>
-      <li><strong>Руководство (4.0):</strong> Подробное руководство со скриншотами, описанием сценариев</li>
+      <li><strong>Введение:</strong> область применения, возможности ПО, уровень подготовки пользователя, рекомендуемая документация</li>
+      <li><strong>Назначение и условия применения:</strong> описание задач, требований к оборудованию и ПО</li>
+      <li><strong>Подготовка к работе:</strong> структура данных, установка, запуск, проверка работоспособности</li>
+      <li><strong>Описание операций:</strong> пошаговое описание функций, интерфейса, команд</li>
+      <li><strong>Аварийные ситуации:</strong> действия при сбоях, восстановление данных, несанкционированный доступ</li>
+      <li><strong>Рекомендации по освоению:</strong> советы, контрольный пример, запуск, проверка</li>
     </ul>
 
     <footer class="text-center mt-5">
